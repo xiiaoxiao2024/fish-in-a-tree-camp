@@ -6,7 +6,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Fish in a Tree 英文共读营系统。学生通过手机（微信）打开每日任务卡，阅读章节、听朗读音频、做词汇闪卡、拍照上传写作作业；老师在后台查看提交、写批改反馈。
 
-**营期：** 7/1–7/14，共 14 天，51 章，第一周 Day 1–7（Ch. 1–25）。
+**营期：** 7/1–7/14，共 13 天（7/12 周日休息），51 章。
+- 第一周：Day 1–7（7/1–7/7，Ch. 1–25）
+- 第二周：Day 8–13（7/8–7/14，跳过 7/12 周日，Ch. 26–51）
 
 ## 启动命令
 
@@ -41,7 +43,7 @@ cloudflared tunnel --url http://localhost:3456
 
 **Day 页面动态注入：** `app.get(/^\/day\d+\.html$/, ...)` 拦截所有 dayN.html 请求，将文件中的 `__OG_BASE__` 替换为实际的 `https://hostname`，使 OG 标签在任何部署域名下都正确。其余静态文件直接由 `express.static` 托管。
 
-### public/dayN.html — 学生端任务卡（Day 1–7）
+### public/dayN.html — 学生端任务卡（Day 1–13）
 
 每天一个文件，结构固定：
 
@@ -72,6 +74,13 @@ Ch13(1390,1460) Ch14(1460,1578) Ch15(1578,1700) Ch16(1700,1740)
 Ch17(1740,1846) Ch18(1846,1944) Ch19(1944,2100) Ch20(2100,2228)
 Ch21(2228,2312) Ch22(2312,2350) Ch23(2350,2396) Ch24(2396,2512)
 Ch25(2512,2584)
+Ch26(2584,2654) Ch27(2654,2732) Ch28(2732,2830) Ch29(2830,3012)
+Ch30(3012,3062) Ch31(3062,3144) Ch32(3144,3252) Ch33(3252,3310)
+Ch34(3310,3452) Ch35(3452,3550) Ch36(3550,3602) Ch37(3602,3688)
+Ch38(3688,3754) Ch39(3754,3899) Ch40(3899,3939) Ch41(3939,4057)
+Ch42(4057,4187) Ch43(4187,4225) Ch44(4225,4291) Ch45(4291,4355)
+Ch46(4355,4445) Ch47(4445,4596) Ch48(4596,4714) Ch49(4714,4754)
+Ch50(4754,4884) Ch51(4884,5125)
 ```
 
 书的文本文件：scratchpad 目录下 `fish_in_a_tree.txt`（5125 行）。
@@ -86,4 +95,12 @@ gcloud 认证需要 quota project：`gcloud auth application-default set-quota-p
 
 **Render 数据库：** 复用 `howie-learning-db`（PostgreSQL Free），不能新建第二个免费 DB。`DATABASE_URL` 环境变量指向该 DB，`submissions` 表在服务启动时自动 `CREATE TABLE IF NOT EXISTS`。
 
-**内容计划：** `week1_content_plan.md` — 每日章节范围、写作题目、批改要点（含 Justin 的批改角度）。
+**内容计划：**
+- `week1_content_plan.md` — Day 1–7 每日章节范围、写作题目、批改要点
+- `每日群文案.docx` — Day 1–13 完整微信群发文案（含链接），7/12 周日休息日单独插入
+
+**Day 页面生成脚本（scratchpad）：**
+- `gen_days2.py` — 生成 Day 2–7
+- `gen_week2.py` — 生成 Day 8–13
+
+**音频生成注意事项：** gcloud token 约 1 小时过期（401 UNAUTHENTICATED），长章节分多 chunk 时易过期。脚本已跳过已存在文件，过期后直接重跑即可续跑。
