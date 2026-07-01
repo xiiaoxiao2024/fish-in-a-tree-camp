@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>老师后台 · Fish in a Tree 共读营</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', sans-serif;
+      background: #f0f4f0; color: #1a2a1a; min-height: 100vh;
+    }
+
+    /* ── Top bar ── */
+    .topbar {
+      background: #0B2416; color: #fff;
+      padding: 0 24px;
+      display: flex; align-items: center; gap: 16px;
+      height: 56px; position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    .topbar .logo { font-size: 20px; }
+    .topbar h1 { font-size: 16px; font-weight: 700; flex: 1; }
+    .topbar .count {
+      background: #C9922B; color: #0B2416;
+      font-size: 12px; font-weight: 800;
+      padding: 3px 10px; border-radius: 20px;
+    }
+    .refresh-btn {
+      background: rgba(255,255,255,0.1); border: none;
+      color: white; font-size: 13px; padding: 6px 12px;
+      border-radius: 8px; cursor: pointer; font-family: inherit;
+    }
+    .refresh-btn:hover { background: rgba(255,255,255,0.2); }
+
+    /* ── Filter bar ── */
+    .filter-bar {
+      background: #fff; padding: 12px 24px;
+      display: flex; gap: 8px; flex-wrap: wrap;
+      border-bottom: 1px solid #e0e8e0;
+    }
+    .filter-btn {
+      padding: 6px 14px; border-radius: 20px; border: 1.5px solid #c8d8c8;
+      background: #fff; color: #444; font-size: 13px; cursor: pointer;
+      font-family: inherit; transition: all 0.15s;
+    }
+    .filter-btn:hover { border-color: #2D6A4F; color: #2D6A4F; }
+    .filter-btn.active { background: #1A3D28; border-color: #1A3D28; color: #fff; }
+
+    /* ── Main layout ── */
+    .main { padding: 20px 24px; max-width: 1100px; margin: 0 auto; }
+
+    /* ── Stats row ── */
+    .stats { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+    .stat-card {
+      background: #fff; border-radius: 12px; padding: 14px 18px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.07); flex: 1; min-width: 120px;
+    }
+    .stat-card .stat-num { font-size: 28px; font-weight: 800; color: #1A3D28; }
+    .stat-card .stat-label { font-size: 12px; color: #888; margin-top: 2px; }
+
+    /* ── Submissions grid ── */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+
+    .sub-card {
+      background: #fff; border-radius: 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      overflow: hidden; transition: box-shadow 0.2s;
+    }
+    .sub-card:hover { box-shadow: 0 4px 18px rgba(0,0,0,0.13); }
+    .sub-card.reviewed { border-left: 4px solid #2D6A4F; }
+    .sub-card.pending  { border-left: 4px solid #C9922B; }
+
+    .sub-header {
+      padding: 12px 15px;
+      display: flex; align-items: center; gap: 10px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .sub-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: #1A3D28; color: #E8B84B;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px; font-weight: 800; flex-shrink: 0;
+    }
+    .sub-name   { font-size: 15px; font-weight: 700; color: #1a2a1a; }
+    .sub-meta   { font-size: 11px; color: #888; margin-top: 2px; }
+    .sub-status {
+      margin-left: auto; font-size: 11px; font-weight: 700;
+      padding: 3px 9px; border-radius: 20px;
+    }
+    .sub-status.pending  { background: #FFF3E0; color: #C9922B; }
+    .sub-status.reviewed { background: #E8F5E9; color: #2D6A4F; }
+
+    /* Photo */
+    .sub-photo-wrap { position: relative; cursor: pointer; }
+    .sub-photo {
+      width: 100%; max-height: 240px; object-fit: cover; display: block;
+      background: #f5f5f5;
+    }
+    .photo-overlay {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0); transition: background 0.2s;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 32px; opacity: 0;
+    }
+    .sub-photo-wrap:hover .photo-overlay { background: rgba(0,0,0,0.25); opacity: 1; }
+
+    /* Feedback area */
+    .sub-feedback { padding: 12px 15px; }
+    .fb-label { font-size: 11px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 7px; }
+    .fb-textarea {
+      width: 100%; border: 1.5px solid #e0e8e0; border-radius: 9px;
+      padding: 9px 11px; font-size: 13px; font-family: inherit;
+      color: #333; line-height: 1.6; resize: vertical; min-height: 70px;
+      background: #fafcfa; transition: border-color 0.2s;
+    }
+    .fb-textarea:focus { outline: none; border-color: #2D6A4F; }
+    .fb-actions { display: flex; gap: 8px; margin-top: 8px; }
+    .btn-save {
+      flex: 1; padding: 9px; background: #1A3D28; color: #fff;
+      border: none; border-radius: 9px; font-size: 13px; font-weight: 600;
+      font-family: inherit; cursor: pointer; transition: background 0.15s;
+    }
+    .btn-save:hover { background: #2D6A4F; }
+    .btn-done {
+      padding: 9px 14px; border: 1.5px solid #2D6A4F; background: #fff;
+      color: #2D6A4F; border-radius: 9px; font-size: 13px; font-weight: 600;
+      font-family: inherit; cursor: pointer; transition: all 0.15s; white-space: nowrap;
+    }
+    .btn-done:hover { background: #2D6A4F; color: #fff; }
+    .btn-done.done-state { background: #2D6A4F; color: #fff; }
+
+    /* Lightbox */
+    .lightbox {
+      display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85);
+      z-index: 999; align-items: center; justify-content: center;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 90vh; border-radius: 8px; }
+    .lightbox-close {
+      position: absolute; top: 20px; right: 24px;
+      color: white; font-size: 32px; cursor: pointer; line-height: 1;
+    }
+
+    /* Empty state */
+    .empty {
+      text-align: center; padding: 60px 20px; color: #aaa;
+      grid-column: 1 / -1;
+    }
+    .empty .empty-icon { font-size: 48px; margin-bottom: 12px; }
+    .empty .empty-text { font-size: 15px; }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="logo">🐟</span>
+  <h1>Fish in a Tree · 老师后台</h1>
+  <span class="count" id="unreadCount">加载中…</span>
+  <button class="refresh-btn" onclick="load()">🔄 刷新</button>
+</div>
+
+<div class="filter-bar" id="filterBar">
+  <button class="filter-btn active" onclick="setFilter('all', this)">全部</button>
+  <button class="filter-btn" onclick="setFilter('pending', this)">待批改</button>
+  <button class="filter-btn" onclick="setFilter('reviewed', this)">已批改</button>
+  <span style="flex:1"></span>
+  <!-- Day filters injected by JS -->
+</div>
+
+<div class="main">
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-num" id="statTotal">—</div>
+      <div class="stat-label">总提交数</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" id="statPending">—</div>
+      <div class="stat-label">待批改</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" id="statReviewed">—</div>
+      <div class="stat-label">已批改</div>
+    </div>
+  </div>
+  <div class="grid" id="grid"></div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">×</span>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script>
+  let allSubs = [];
+  let activeFilter = 'all';
+  let activeDayFilter = 'all';
+
+  async function load() {
+    try {
+      const res = await fetch('/api/submissions');
+      allSubs = await res.json();
+      updateStats();
+      buildDayFilters();
+      render();
+    } catch(e) {
+      document.getElementById('grid').innerHTML = '<div class="empty"><div class="empty-icon">⚠️</div><div class="empty-text">无法连接服务器</div></div>';
+    }
+  }
+
+  function updateStats() {
+    const pending  = allSubs.filter(s => !s.reviewed).length;
+    const reviewed = allSubs.filter(s => s.reviewed).length;
+    document.getElementById('statTotal').textContent    = allSubs.length;
+    document.getElementById('statPending').textContent  = pending;
+    document.getElementById('statReviewed').textContent = reviewed;
+    document.getElementById('unreadCount').textContent  = pending > 0 ? `${pending} 待批改` : '全部已批改 ✓';
+  }
+
+  function buildDayFilters() {
+    const days = [...new Set(allSubs.map(s => s.day))].sort((a,b) => +a - +b);
+    const bar = document.getElementById('filterBar');
+    bar.querySelectorAll('.day-btn').forEach(b => b.remove());
+    days.forEach(d => {
+      const btn = document.createElement('button');
+      btn.className = 'filter-btn day-btn';
+      btn.textContent = `Day ${d}`;
+      btn.onclick = () => setDayFilter(d, btn);
+      bar.appendChild(btn);
+    });
+  }
+
+  function setFilter(f, btn) {
+    activeFilter = f;
+    document.querySelectorAll('.filter-btn:not(.day-btn)').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    render();
+  }
+
+  function setDayFilter(d, btn) {
+    activeDayFilter = activeDayFilter === d ? 'all' : d;
+    document.querySelectorAll('.day-btn').forEach(b => b.classList.remove('active'));
+    if (activeDayFilter !== 'all') btn.classList.add('active');
+    render();
+  }
+
+  function render() {
+    let subs = allSubs;
+    if (activeFilter === 'pending')  subs = subs.filter(s => !s.reviewed);
+    if (activeFilter === 'reviewed') subs = subs.filter(s => s.reviewed);
+    if (activeDayFilter !== 'all')   subs = subs.filter(s => s.day === activeDayFilter);
+
+    const grid = document.getElementById('grid');
+    if (subs.length === 0) {
+      grid.innerHTML = '<div class="empty"><div class="empty-icon">🐟</div><div class="empty-text">暂无提交记录</div></div>';
+      return;
+    }
+
+    grid.innerHTML = subs.map(s => {
+      const time = new Date(s.submittedAt).toLocaleString('zh-CN', {
+        month:'numeric', day:'numeric', hour:'2-digit', minute:'2-digit'
+      });
+      const initials = s.studentName.slice(0, 1).toUpperCase();
+      return `
+        <div class="sub-card ${s.reviewed ? 'reviewed' : 'pending'}" id="card-${s.id}">
+          <div class="sub-header">
+            <div class="sub-avatar">${initials}</div>
+            <div>
+              <div class="sub-name">${esc(s.studentName)}</div>
+              <div class="sub-meta">Day ${s.day} · ${time}</div>
+            </div>
+            <span class="sub-status ${s.reviewed ? 'reviewed' : 'pending'}">
+              ${s.reviewed ? '✓ 已批改' : '待批改'}
+            </span>
+          </div>
+          <div class="sub-photo-wrap" onclick="openLightbox('${s.photoPath}')">
+            <img class="sub-photo" src="${s.photoPath}" alt="作业照片" loading="lazy">
+            <div class="photo-overlay">🔍</div>
+          </div>
+          <div class="sub-feedback">
+            <div class="fb-label">批改反馈</div>
+            <textarea class="fb-textarea" id="fb-${s.id}" placeholder="在这里写反馈…">${esc(s.feedback)}</textarea>
+            <div class="fb-actions">
+              <button class="btn-save" onclick="saveFeedback('${s.id}')">💾 保存反馈</button>
+              <button class="btn-done ${s.reviewed ? 'done-state' : ''}" id="done-${s.id}" onclick="toggleDone('${s.id}')">
+                ${s.reviewed ? '✓ 已批改' : '标记完成'}
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  async function saveFeedback(id) {
+    const feedback = document.getElementById(`fb-${id}`).value;
+    await fetch(`/api/feedback/${id}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ feedback })
+    });
+    const sub = allSubs.find(s => s.id === id);
+    if (sub) sub.feedback = feedback;
+    showToast('反馈已保存 ✓');
+  }
+
+  async function toggleDone(id) {
+    const sub = allSubs.find(s => s.id === id);
+    if (!sub) return;
+    const newVal = !sub.reviewed;
+    await fetch(`/api/feedback/${id}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ reviewed: newVal })
+    });
+    sub.reviewed = newVal;
+    updateStats();
+    render();
+  }
+
+  function openLightbox(src) {
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+
+  function esc(str) {
+    return (str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function showToast(msg) {
+    const t = document.createElement('div');
+    t.textContent = msg;
+    Object.assign(t.style, {
+      position:'fixed', bottom:'24px', left:'50%', transform:'translateX(-50%)',
+      background:'#1A3D28', color:'#fff', padding:'10px 20px', borderRadius:'20px',
+      fontSize:'14px', fontWeight:'600', zIndex:'9999', boxShadow:'0 2px 12px rgba(0,0,0,0.3)'
+    });
+    document.body.appendChild(t);
+    setTimeout(() => t.remove(), 2000);
+  }
+
+  // Auto-refresh every 30 seconds
+  load();
+  setInterval(load, 30000);
+</script>
+
+</body>
+</html>

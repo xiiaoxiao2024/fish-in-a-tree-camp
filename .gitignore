@@ -1,0 +1,8 @@
+node_modules/
+data/uploads/
+data/submissions.json
+*.pdf
+*.azw
+*.azw3
+.DS_Store
+/tmp/
