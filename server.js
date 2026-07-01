@@ -54,7 +54,18 @@ const upload = USE_DB
     });
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+
+// Serve day pages with dynamic OG base URL injected
+const PUBLIC_DIR = path.join(__dirname, 'public');
+app.get(/^\/day\d+\.html$/, (req, res) => {
+  const file = path.join(PUBLIC_DIR, req.path);
+  if (!fs.existsSync(file)) return res.status(404).end();
+  const base = req.protocol + '://' + req.get('host');
+  const html = fs.readFileSync(file, 'utf8').replace(/__OG_BASE__/g, base);
+  res.set('Content-Type', 'text/html; charset=utf-8').send(html);
+});
+
+app.use(express.static(PUBLIC_DIR));
 if (!USE_DB) app.use('/uploads', express.static(UPLOAD_DIR));
 
 // ── POST /api/submit ───────────────────────────────────────────
