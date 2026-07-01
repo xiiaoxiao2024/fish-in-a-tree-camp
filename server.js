@@ -4,6 +4,7 @@ const fs      = require('fs');
 const path    = require('path');
 
 const app  = express();
+app.set('trust proxy', 1);  // Render terminates SSL at the load balancer
 const PORT = process.env.PORT || 3456;
 const USE_DB = !!process.env.DATABASE_URL;
 
