@@ -58,7 +58,7 @@ app.use(express.json());
 
 // Serve day pages with dynamic OG base URL injected
 const PUBLIC_DIR = path.join(__dirname, 'public');
-app.get(/^\/day\d+\.html$/, (req, res) => {
+app.get(/^\/(frindle\/)?day\d+\.html$/, (req, res) => {
   const file = path.join(PUBLIC_DIR, req.path);
   if (!fs.existsSync(file)) return res.status(404).end();
   const base = req.protocol + '://' + req.get('host');

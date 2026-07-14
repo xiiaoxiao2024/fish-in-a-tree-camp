@@ -1,24 +1,27 @@
 # Fish in a Tree 共读营 · 访问链接
 
 ## 学生端（发到微信群）
-https://separate-builder-consolidated-political.trycloudflare.com/day1.html
+https://fish-in-a-tree-camp.onrender.com/day1.html
 
 ## 老师后台
-https://separate-builder-consolidated-political.trycloudflare.com/admin.html
+https://fish-in-a-tree-camp.onrender.com/admin.html
 
 ---
 
-## 本地地址（同一 WiFi 下可用）
-- http://localhost:3456/day1.html
+# Frindle 共读营（第二期）· 访问链接
 
-## 启动方式（每次开电脑后运行）
-```bash
-# 终端 1 — 启动服务
-cd ~/Desktop/fish\ in\ a\ tree && node server.js
+## 学生端（发到微信群，逐日替换 dayN）
+https://fish-in-a-tree-camp.onrender.com/frindle/day1.html
+… day2.html … day7.html
 
-# 终端 2 — 开启公网隧道（URL 固定需注册 Cloudflare 账号，否则每次不同）
-cloudflared tunnel --url http://localhost:3456
-```
+## 老师后台（同一个后台，用 "F Day N" 筛选区分第二期提交）
+https://fish-in-a-tree-camp.onrender.com/admin.html
 
-> 当前隧道 URL（每次启动可能变化）：https://separate-builder-consolidated-political.trycloudflare.com
-> 若需固定 URL，可注册免费 Cloudflare 账号绑定域名。
+微信群文案见项目根目录 `每日群文案-Frindle.docx`。
+
+---
+
+> 固定域名，永久有效，无需每天更新。
+> 学生作业提交存在 PostgreSQL 数据库，重启不丢失。
+>
+> 注意：Free 版 15 分钟无访问会 spin down，第一个学生打开时等约 30 秒冷启动。

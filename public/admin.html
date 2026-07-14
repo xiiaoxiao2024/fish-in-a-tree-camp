@@ -218,14 +218,29 @@
     document.getElementById('unreadCount').textContent  = pending > 0 ? `${pending} 待批改` : '全部已批改 ✓';
   }
 
+  // Day values are either plain numbers ('1'-'13', Fish in a Tree) or
+  // prefixed ('F1'-'F7', Frindle) — sort by prefix first, then numerically.
+  function dayParts(d) {
+    const m = String(d).match(/^([A-Za-z]*)(\d+)$/);
+    return m ? { prefix: m[1], num: +m[2] } : { prefix: String(d), num: 0 };
+  }
+  function dayLabel(d) {
+    const { prefix, num } = dayParts(d);
+    return prefix ? `${prefix} Day ${num}` : `Day ${num}`;
+  }
+
   function buildDayFilters() {
-    const days = [...new Set(allSubs.map(s => s.day))].sort((a,b) => +a - +b);
+    const days = [...new Set(allSubs.map(s => s.day))].sort((a, b) => {
+      const pa = dayParts(a), pb = dayParts(b);
+      if (pa.prefix !== pb.prefix) return pa.prefix.localeCompare(pb.prefix);
+      return pa.num - pb.num;
+    });
     const bar = document.getElementById('filterBar');
     bar.querySelectorAll('.day-btn').forEach(b => b.remove());
     days.forEach(d => {
       const btn = document.createElement('button');
       btn.className = 'filter-btn day-btn';
-      btn.textContent = `Day ${d}`;
+      btn.textContent = dayLabel(d);
       btn.onclick = () => setDayFilter(d, btn);
       bar.appendChild(btn);
     });
@@ -268,7 +283,7 @@
             <div class="sub-avatar">${initials}</div>
             <div>
               <div class="sub-name">${esc(s.studentName)}</div>
-              <div class="sub-meta">Day ${s.day} · ${time}</div>
+              <div class="sub-meta">${dayLabel(s.day)} · ${time}</div>
             </div>
             <span class="sub-status ${s.reviewed ? 'reviewed' : 'pending'}">
               ${s.reviewed ? '✓ 已批改' : '待批改'}
