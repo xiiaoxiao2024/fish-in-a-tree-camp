@@ -105,6 +105,7 @@
     .task-head.audio   { background: #1a1a2e; }
     .task-head.writing { background: #5C2D0A; }
     .task-head.teacher { background: #2a1a0e; }
+    .task-head.quiz    { background: #143C36; }
 
     .task-emoji {
       font-size: 20px; width: 38px; height: 38px;
@@ -217,6 +218,30 @@
       margin-top: 11px; font-size: 12px;
       color: rgba(255,255,255,0.35); line-height: 1.5; text-align: center;
     }
+
+    /* ── Reading Comprehension Quiz ── */
+    .quiz-block { margin-bottom: 18px; }
+    .quiz-block:last-child { margin-bottom: 0; }
+    .quiz-q { font-size: 13.5px; font-weight: 700; color: #232B6B; line-height: 1.5; margin-bottom: 9px; }
+    .quiz-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 20px; height: 20px; background: #3949AB; color: #fff;
+      border-radius: 50%; font-size: 11px; font-weight: 800; margin-right: 7px;
+      flex-shrink: 0; vertical-align: middle;
+    }
+    .quiz-opts { display: flex; flex-direction: column; gap: 7px; }
+    .quiz-opt {
+      display: block; width: 100%; text-align: left; font-family: inherit;
+      background: #eef0fa; border: 1.5px solid transparent; border-radius: 10px;
+      padding: 9px 12px; font-size: 12.5px; color: #2a2f45; cursor: pointer;
+      transition: all 0.15s; line-height: 1.4;
+    }
+    .quiz-opt:active { background: #dde1f5; }
+    .quiz-block.answered .quiz-opt { cursor: default; pointer-events: none; }
+    .quiz-block.answered .quiz-opt.correct { background: #E3F5E8; border-color: #3C9A5C; color: #1E5E36; font-weight: 700; }
+    .quiz-block.answered .quiz-opt.wrong   { background: #FCE8E6; border-color: #D9534F; color: #8A2E28; }
+    .quiz-block.answered .quiz-opt.correct::after { content: ' \2713'; }
+    .quiz-block.answered .quiz-opt.wrong::after   { content: ' \2717'; }
 
     /* ── Writing ── */
     .prompt-box {
@@ -399,7 +424,65 @@
     </div>
   </div>
 
-  <!-- ═══ 3. 单词闪卡 ═══ -->
+  <!-- ═══ 3. 阅读理解 ═══ -->
+  <div class="task-card">
+    <div class="task-head quiz">
+      <div class="task-emoji">🧠</div>
+      <div>
+        <div class="task-label">阅读理解</div>
+        <div class="task-sub">5 questions · 检测今天读的内容</div>
+      </div>
+    </div>
+    <div class="task-body">
+      <div class="quiz-block" data-correct="B">
+        <div class="quiz-q"><span class="quiz-num">1</span>What was special about how Nick was known at school?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt" data-key="A" onclick="selectQuizOption(this)">A. He was one of the smartest kids in school</div>
+          <div class="quiz-opt" data-key="B" onclick="selectQuizOption(this)">B. He deserved &ldquo;a list all his own&rdquo; &mdash; not bad, not smart, not good, just Nick</div>
+          <div class="quiz-opt" data-key="C" onclick="selectQuizOption(this)">C. He was the school&rsquo;s best athlete</div>
+          <div class="quiz-opt" data-key="D" onclick="selectQuizOption(this)">D. He rarely came up with ideas</div>
+        </div>
+      </div>
+      <div class="quiz-block" data-correct="B">
+        <div class="quiz-q"><span class="quiz-num">2</span>How did Nick discover the &ldquo;blackbird trick&rdquo;?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt" data-key="A" onclick="selectQuizOption(this)">A. He learned it in science class</div>
+          <div class="quiz-opt" data-key="B" onclick="selectQuizOption(this)">B. He saw a TV show about red-wing blackbirds warning of danger with a high chirp</div>
+          <div class="quiz-opt" data-key="C" onclick="selectQuizOption(this)">C. His brother James taught him</div>
+          <div class="quiz-opt" data-key="D" onclick="selectQuizOption(this)">D. Mrs. Granger explained it to the class</div>
+        </div>
+      </div>
+      <div class="quiz-block" data-correct="A">
+        <div class="quiz-q"><span class="quiz-num">3</span>What happened to Janet Fisk because of Nick&rsquo;s blackbird trick?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt" data-key="A" onclick="selectQuizOption(this)">A. She got blamed and yelled at, even though Nick made the sound</div>
+          <div class="quiz-opt" data-key="B" onclick="selectQuizOption(this)">B. She won a prize for being clever</div>
+          <div class="quiz-opt" data-key="C" onclick="selectQuizOption(this)">C. She told the teacher it was Nick right away</div>
+          <div class="quiz-opt" data-key="D" onclick="selectQuizOption(this)">D. She refused to ever speak to Nick again</div>
+        </div>
+      </div>
+      <div class="quiz-block" data-correct="B">
+        <div class="quiz-q"><span class="quiz-num">4</span>What is special about Mrs. Granger&rsquo;s giant dictionary?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt" data-key="A" onclick="selectQuizOption(this)">A. It is small enough to fit in a pocket</div>
+          <div class="quiz-opt" data-key="B" onclick="selectQuizOption(this)">B. It sits on its own table like an altar, and it takes two kids to carry</div>
+          <div class="quiz-opt" data-key="C" onclick="selectQuizOption(this)">C. It is kept locked away in her desk drawer</div>
+          <div class="quiz-opt" data-key="D" onclick="selectQuizOption(this)">D. It has pictures but no definitions</div>
+        </div>
+      </div>
+      <div class="quiz-block" data-correct="A">
+        <div class="quiz-q"><span class="quiz-num">5</span>Why does the phrase &ldquo;Look it up!&rdquo; matter to every Lincoln Elementary graduate?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt" data-key="A" onclick="selectQuizOption(this)">A. It was Mrs. Granger&rsquo;s famous battle cry about using the dictionary</div>
+          <div class="quiz-opt" data-key="B" onclick="selectQuizOption(this)">B. It is the school&rsquo;s official motto printed on report cards</div>
+          <div class="quiz-opt" data-key="C" onclick="selectQuizOption(this)">C. It is what students say to greet Mrs. Granger</div>
+          <div class="quiz-opt" data-key="D" onclick="selectQuizOption(this)">D. It is the title of the weekly vocabulary test</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ 4. 单词闪卡 ═══ -->
   <div class="task-card">
     <div class="task-head vocab">
       <div class="task-emoji">🃏</div>
@@ -451,7 +534,7 @@
     </div>
   </div>
 
-  <!-- ═══ 4. 今日写作 ═══ -->
+  <!-- ═══ 5. 今日写作 ═══ -->
   <div class="task-card">
     <div class="task-head writing">
       <div class="task-emoji">✏️</div>
@@ -515,7 +598,7 @@
     </div>
   </div>
 
-  <!-- ═══ 5. 老师的话 ═══ -->
+  <!-- ═══ 6. 老师的话 ═══ -->
   <div class="task-card">
     <div class="task-head teacher">
       <div class="task-emoji">💬</div>
@@ -559,6 +642,18 @@
   // ── Reading checklist ─────────────────────────────────────────
   function toggleCheck(el) {
     el.querySelector('.ch-check').classList.toggle('done');
+  }
+
+  // ── Reading comprehension quiz ─────────────────────────────────
+  function selectQuizOption(el) {
+    const block = el.closest('.quiz-block');
+    if (block.classList.contains('answered')) return;
+    block.classList.add('answered');
+    const correct = block.dataset.correct;
+    block.querySelectorAll('.quiz-opt').forEach(o => {
+      if (o.dataset.key === correct) o.classList.add('correct');
+      else if (o === el) o.classList.add('wrong');
+    });
   }
 
   // ── Vocab flashcard + pronunciation ──────────────────────────
