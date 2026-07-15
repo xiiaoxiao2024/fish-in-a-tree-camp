@@ -27,6 +27,8 @@ epub 源文件：项目根目录 `Frindle (Clements Andrew) (z-library.sk, 1lib.
 
 **URL 命名空间（避免和第一期撞名）：** 任务卡放在 `public/frindle/day1.html`...`day7.html`（不是根目录 `dayN.html`，那是第一期占用的）。`day` 表单字段用 `F1`...`F7` 区分提交记录，`server.js` 的 OG 注入正则和 `admin.html` 的 day 排序/筛选逻辑相应扩展以兼容两期共存。音频放 `public/frindle/audio/chapterN.mp3`（1-15）。配色用海报同款靛蓝 `#3949AB`，区别于第一期森林绿。
 
+**阅读理解板块（2026-07-15 新增）：** 每张任务卡在「朗读音频」和「单词闪卡」之间插入「阅读理解」卡片（`task-head quiz`，深青色 `#143C36` + 🧠 图标），5 道单选题对应当天章节，纯前端自测——点击选项立即高亮反馈（绿色✓正确 / 红色✗错误+标出正确答案），不提交后端，答过的题锁定不能改。题目/选项写在 HTML 文本内容里，正确答案存在 `data-correct` 属性（`A`/`B`/`C`/`D`），JS 用 `selectQuizOption(el)` 按 `data-key` 比对——刻意不把题目文本拼进 JS 字符串字面量，避免选项里的撇号（如 "Nick's"、"doesn't"）触发本文件后面记录的撇号断字符串坑。生成脚本（一次性用完）：scratchpad `add_frindle_quiz.py`，7 天题库硬编码在脚本里，改题需要重新编辑脚本或直接改 HTML。
+
 招生海报（长图）**不放在本项目目录**，生成在 `~/Desktop/社群/长图-Frindle.png`，源配置在该文件夹的 `generate_posters.py`（`POSTERS` 列表最后一项，accent `#3949AB` 靛蓝）。该脚本是社群多本共读书目共用的海报生成器（PIL 绘制，非 Playwright 截图），改内容后重新 `python3 generate_posters.py` 会连同其他书目一起重绘。
 
 **不要与 `~/Desktop/社群/长图-Fish-in-a-Tree.png` 混淆**：那是同一本书的另一种付费书友群模式（2周4次书面作业，¥79，无每日任务卡/音频/词汇闪卡），跟本项目的每日互动任务卡是两套并行的商业形态，字段结构不能互相套用。
