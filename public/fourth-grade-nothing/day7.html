@@ -22,7 +22,7 @@ DATA.length=10;
 const pathDay=Number((location.pathname.match(/day(\\d+)/)||[])[1]||0);
 let day=Math.min(10,Math.max(1,pathDay||Number(new URLSearchParams(location.search).get('day')||1)));let photo=null;
 const $=id=>document.getElementById(id);function esc(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function renderNav(){ $('days').innerHTML=DATA.map((_,i)=>`<button class="${i+1===day?'active':''}" onclick="go(${i+1})">Day ${i+1}</button>`).join('') }
+function renderNav(){ $('days').innerHTML=pathDay ? `<button class="active">Day ${day}</button>` : DATA.map((_,i)=>`<button class="${i+1===day?'active':''}" onclick="go(${i+1})">Day ${i+1}</button>`).join('') }
 function render(){const d=DATA[day-1];document.title=`Day ${day} · ${d.title} · Tales of a Fourth Grade Nothing`;renderNav();$('app').innerHTML=`
 <section class="card"><div class="head read">📖 <div>今日阅读<small>Chapter ${day} · ${d.pages}</small></div></div><div class="body"><div class="chap"><input type="checkbox" id="done"> <div><b>Chapter ${day} — ${d.title}</b><br><span>${d.focus}</span></div></div><div class="tip">💡 ${d.tip}</div></div></section>
 <section class="card"><div class="head quiz">🧠 <div>阅读理解<small>5 题 · 读完再挑战</small></div></div><div class="body">${d.qs.map((q,i)=>`<div class="q"><b>${i+1}. ${q[0]}</b><div class="opts">${q.slice(1,5).map((o,j)=>`<button data-correct="${q[5]}" data-key="${'ABCD'[j]}" onclick="answer(this)">${'ABCD'[j]}. ${o}</button>`).join('')}</div></div>`).join('')}</div></section>
