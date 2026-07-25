@@ -58,11 +58,16 @@ app.use(express.json());
 
 // Serve day pages with dynamic OG base URL injected
 const PUBLIC_DIR = path.join(__dirname, 'public');
-app.get(/^\/(frindle\/)?day\d+\.html$/, (req, res) => {
+app.get(/^\/(frindle\/|fourth-grade-nothing\/)?day\d+\.html$/, (req, res) => {
   const file = path.join(PUBLIC_DIR, req.path);
   if (!fs.existsSync(file)) return res.status(404).end();
   const base = req.protocol + '://' + req.get('host');
-  const html = fs.readFileSync(file, 'utf8').replace(/__OG_BASE__/g, base);
+  let html = fs.readFileSync(file, 'utf8').replace(/__OG_BASE__/g, base);
+  if (req.path.startsWith('/fourth-grade-nothing/')) {
+    const day = Number((req.path.match(/day(\d+)/) || [])[1] || 1);
+    const titles = ['The Big Winner', 'Mr. and Mrs. Juicy-O', 'The Family Dog', 'My Brother the Bird', 'The Birthday Bash', 'Fang Hits Town', 'The Flying Train Committee', 'The TV Star', 'Just Another Rainy Day', 'Dribble!'];
+    html = html.replace(/__DAY__/g, String(day)).replace(/__OG_TITLE__/g, titles[day - 1] || 'Reading Day');
+  }
   res.set('Content-Type', 'text/html; charset=utf-8').send(html);
 });
 
