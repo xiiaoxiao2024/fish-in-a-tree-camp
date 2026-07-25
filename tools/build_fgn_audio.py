@@ -1,4 +1,4 @@
-import base64, html, json, re, subprocess, tempfile, zipfile
+import base64, html, json, re, subprocess, tempfile, zipfile, time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -29,7 +29,7 @@ for i, start in enumerate(starts):
 token = subprocess.check_output(['gcloud','auth','application-default','print-access-token'], text=True).strip()
 api = 'https://texttospeech.googleapis.com/v1/text:synthesize'
 
-def chunks(text, limit=1800):
+def chunks(text, limit=4200):
     parts = []
     while len(text) > limit:
         cut = text.rfind(' ', 0, limit)
@@ -45,13 +45,22 @@ for day, nums in enumerate(groups, 1):
     with tempfile.TemporaryDirectory() as td:
         pieces = []
         text = ' '.join(chapters[n-1] for n in nums)
-        for idx, part in enumerate(chunks(text)):
+        def synth(item):
+            idx, part = item
             payload = json.dumps({'input': {'text': part}, 'voice': {'languageCode':'en-US','name':'en-US-Journey-F'}, 'audioConfig': {'audioEncoding':'MP3','speakingRate':0.95}})
-            res = subprocess.run(['curl','-x','http://127.0.0.1:7897','--http1.1','--fail','--silent','--show-error','--connect-timeout','30','--max-time','300','-X','POST',api,'-H',f'Authorization: Bearer {token}','-H','x-goog-user-project: gen-lang-client-0474546891','-H','Content-Type: application/json','-d',payload], check=True, capture_output=True, text=True)
+            args=['curl','-x','http://127.0.0.1:7897','--http1.1','--fail','--silent','--show-error','--connect-timeout','30','--max-time','300','-X','POST',api,'-H',f'Authorization: Bearer {token}','-H','x-goog-user-project: gen-lang-client-0474546891','-H','Content-Type: application/json','-d',payload]
+            for attempt in range(5):
+                try:
+                    res = subprocess.run(args, check=True, capture_output=True, text=True)
+                    break
+                except subprocess.CalledProcessError:
+                    if attempt == 4: raise
+                    time.sleep(3 * (attempt + 1))
             data = json.loads(res.stdout)
             piece = Path(td) / f'piece{idx}.mp3'
             piece.write_bytes(base64.b64decode(data['audioContent']))
-            pieces.append(piece)
+            return piece
+        pieces = [synth(item) for item in enumerate(chunks(text))]
         concat = Path(td) / 'concat.txt'
         concat.write_text('\n'.join(f"file '{p}'" for p in pieces))
         subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-f','concat','-safe','0','-i',str(concat),'-c','copy',str(target),'-y'], check=True)
