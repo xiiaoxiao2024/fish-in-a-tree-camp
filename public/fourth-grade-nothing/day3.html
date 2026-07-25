@@ -19,7 +19,7 @@ const DATA=[
 {title:'Dribble!',pages:'pp. 108–结尾',focus:'Dribble 的命运带来全书高潮，Peter 必须面对最难过的一刻。',tip:'写完最后一章后，你最想对 Peter 说什么？',words:[['accident','意外'],['disappear','消失'],['heartbroken','心碎的'],['comfort','安慰'],['advice','建议']],prompt:'Write a letter to Peter. Comfort him and give him one piece of advice.',tags:['5–7 sentences','Dear Peter,','I hope…'],starters:['Dear Peter, I am sorry that…','My advice is…','You are not alone because…'],teacher:'恭喜你读完这本书！Peter 的故事告诉我们：家人会让人烦恼，也会在最需要的时候彼此陪伴。',qs:[['Who is Dribble?','Peter’s turtle','Peter’s teacher','Fudge’s friend','A TV star','A'],['The last chapter is mainly about…','a difficult family event','a school test','a new vacation','a birthday cake','A'],['To comfort someone means to…','help them feel better','make them angry','ignore them','surprise them','A'],['Peter needs…','support','a new grade','a train committee','a TV job','A'],['A strong ending can make readers…','think and feel','forget every character','skip the story','learn nothing','A']]}
 ];
 DATA.length=10;
-const pathDay=Number((location.pathname.match(/day(\\d+)/)||[])[1]||0);
+const pathDay=Number((location.pathname.match(/day(\d+)/)||[])[1]||0);
 let day=Math.min(10,Math.max(1,pathDay||Number(new URLSearchParams(location.search).get('day')||1)));let photo=null;
 const $=id=>document.getElementById(id);function esc(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function renderNav(){ $('days').innerHTML=pathDay ? `<button class="active">Day ${day}</button>` : DATA.map((_,i)=>`<button class="${i+1===day?'active':''}" onclick="go(${i+1})">Day ${i+1}</button>`).join('') }
