@@ -36,7 +36,7 @@ https://fish-in-a-tree-camp.onrender.com/admin.html
 - https://fish-in-a-tree-camp.onrender.com/fourth-grade-nothing/day9.html
 - https://fish-in-a-tree-camp.onrender.com/fourth-grade-nothing/day10.html
 
-助教群发话术见 `每日群文案-Tales-of-a-Fourth-Grade-Nothing.md`。
+助教群发话术见 `每日群文案-Tales-of-a-Fourth-Grade-Nothing.docx`（源文案同时保留为 `.md`）。
 
 ---
 
