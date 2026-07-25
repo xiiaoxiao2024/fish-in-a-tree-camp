@@ -21,6 +21,25 @@ https://fish-in-a-tree-camp.onrender.com/admin.html
 
 ---
 
+# Tales of a Fourth Grade Nothing 共读营（10 天）
+
+学生端独立任务卡：
+
+- https://fish-in-a-tree-camp.onrender.com/fourth-grade-nothing/day1.html
+- https://fish-in-a-tree-camp.onrender.com/fourth-grade-nothing/day2.html
+- https://fish-in-a-tree-camp.onrender.com/fourth-grade-nothing/day3.html
+- https://fish-in-a-tree-camp.onrender.com/fourth-grade-nothing/day4.html
+- https://fish-in-a-tree-camp.onrender.com/fourth-grade-nothing/day5.html
+- https://fish-in-a-tree-camp.onrender.com/fourth-grade-nothing/day6.html
+- https://fish-in-a-tree-camp.onrender.com/fourth-grade-nothing/day7.html
+- https://fish-in-a-tree-camp.onrender.com/fourth-grade-nothing/day8.html
+- https://fish-in-a-tree-camp.onrender.com/fourth-grade-nothing/day9.html
+- https://fish-in-a-tree-camp.onrender.com/fourth-grade-nothing/day10.html
+
+助教群发话术见 `每日群文案-Tales-of-a-Fourth-Grade-Nothing.md`。
+
+---
+
 > 固定域名，永久有效，无需每天更新。
 > 学生作业提交存在 PostgreSQL 数据库，重启不丢失。
 >
