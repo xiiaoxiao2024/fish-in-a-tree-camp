@@ -35,6 +35,15 @@ epub 源文件：项目根目录 `Frindle (Clements Andrew) (z-library.sk, 1lib.
 
 海报文案要点（用户明确要求）：不提“衔接 Fish in a Tree”，不出现 Rangel 品牌落款，不提“同伴互评”“结营证书”。
 
+### 后续书目任务卡统一规范（2026-07-25）
+
+- 每天一张独立任务卡和独立 URL（`/<book-slug>/dayN.html`）；独立卡顶部只显示当前 Day，不显示跨天导航。
+- 固定顺序：今日阅读 → 朗读音频 → 阅读理解 → 单词闪卡 → 今日写作 → Teacher’s Note。
+- Teacher’s Note 必须用自然英文；今日写作必须包含 Writing Prompt、Word Bank（英文 + 中文释义）和 Sentence Starters。
+- 朗读使用自然美式英语，优先 `en-US-Journey-F`，语速约 0.95；每张卡必须绑定自己的音频文件。
+- 微信转发必须配置完整 OG 元数据（title/description/image/尺寸/url），使用本书专属封面，部署后 URL 使用 HTTPS。
+- 助教每日群发文案最终交付 `.docx`；`.md` 仅作为源稿。上线前逐日检查页面、音频、封面和 OG 预览均可访问。
+
 ## 启动命令
 
 ```bash
