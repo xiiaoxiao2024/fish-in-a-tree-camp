@@ -1,199 +1,59 @@
-# How to Eat Fried Worms · 7天共读营助教每日群发文案
+# How to Eat Fried Worms · 7天助教每日群发话术
 
-> 使用说明：每天先发开营消息，提醒孩子按任务卡逐字读完当天章节，再听对应音频、完成理解题和英文写作。不要只听音频代替读书。
+> 使用说明：这是 DOCX 的源稿；最终发群文件为同名 `.docx`。每天在固定时间发一条，使用当天独立任务卡链接。语气轻松、短句为主，鼓励孩子完成阅读和拍照提交。
 
 ## Day 1 · The Bet
 
-🔗 今日任务卡：`/fried-worms/day1.html`
+大家晚上好！📘 今天我们开始读 Thomas Rockwell 的 *How to Eat Fried Worms*。Billy 为了买一辆 minibike，接受了一个非常奇怪的赌约：15 天吃掉 15 条虫子。请读 Chapter 1–6，看看这个赌约是怎样开始的，Billy 又做了哪些准备。读完后想一想：如果是你，会接受这个赌约吗？
 
-【开营消息】
-Good morning, readers! 🌞 今天进入第 1 天：The Bet。
-今天请认真读完 Chapter 1–6 的书上正文，逐字逐句读，不要跳读，也不要只靠猜意思。读完后再打开任务卡听对应的完整朗读音频。
+🔗 今日任务卡：`https://fish-in-a-tree-camp.onrender.com/fried-worms/day1.html`
 
-今天的故事线：Billy 接下 15 天吃 15 条虫子的赌约；朋友们开始准备和担心。
-
-阅读时想一想：Billy 为什么愿意接受这个赌约？他真正想得到的是什么？
-
-【完成清单】
-□ 读完 Chapter 1–6 的每一个字
-□ 听完今天每个章节的朗读音频，并跟读一小段
-□ 完成 3 道阅读理解题
-□ 翻完 6 张单词闪卡
-□ 完成今日英文写作，拍照提交
-
-【提醒孩子】
-先读书，再听音频；遇到不认识的词先圈出来，结合上下文和词卡处理。最重要的是把今天的内容读完整。
-
-【晚间收营】
-今天读完了吗？请在群里回复“Day 1 完成”，也可以分享一个你觉得最有趣、最奇怪或最意外的细节。不要只说“很好看”，请尽量用一句英文说明：What happened today?
-
-【助教观察点】
-Welcome to the camp! Today we meet Billy and his friends, and the whole story begins with one wild boast. Read every chapter carefully. Notice how the bet sounds funny, but also creates a real problem for the boys.
+完成今天的阅读、单词闪卡、阅读理解和英文写作后拍照提交。
 
 ## Day 2 · The Plotters
 
-🔗 今日任务卡：`/fried-worms/day2.html`
+今天读 Chapter 7–12。Billy 继续完成挑战，而 Alan 和 Joe 开始想办法吓唬他、阻止他。读的时候请留意：他们的计划是什么？为什么没有成功？完成今天的单词闪卡、阅读理解和 3–5 句英文写作后拍照提交。
 
-【开营消息】
-Good morning, readers! 🌞 今天进入第 2 天：The Plotters。
-今天请认真读完 Chapter 7–12 的书上正文，逐字逐句读，不要跳读，也不要只靠猜意思。读完后再打开任务卡听对应的完整朗读音频。
+🔗 今日任务卡：`https://fish-in-a-tree-camp.onrender.com/fried-worms/day2.html`
 
-今天的故事线：Billy 吃到第 5 条；Alan 和 Joe 开始用故事和计谋吓唬、阻止他。
-
-阅读时想一想：Alan 和 Joe 的计划为什么总是失败？Billy 又是怎样坚持下来的？
-
-【完成清单】
-□ 读完 Chapter 7–12 的每一个字
-□ 听完今天每个章节的朗读音频，并跟读一小段
-□ 完成 3 道阅读理解题
-□ 翻完 6 张单词闪卡
-□ 完成今日英文写作，拍照提交
-
-【提醒孩子】
-先读书，再听音频；遇到不认识的词先圈出来，结合上下文和词卡处理。最重要的是把今天的内容读完整。
-
-【晚间收营】
-今天读完了吗？请在群里回复“Day 2 完成”，也可以分享一个你觉得最有趣、最奇怪或最意外的细节。不要只说“很好看”，请尽量用一句英文说明：What happened today?
-
-【助教观察点】
-Today the bet becomes a battle of ideas. As you read, track each plan: what do Alan and Joe try, and how does Billy respond? Strong readers look for the exact detail that makes a plan work—or fail.
+完成今天的阅读、单词闪卡、阅读理解和英文写作后拍照提交。
 
 ## Day 3 · The Night Worry
 
-🔗 今日任务卡：`/fried-worms/day3.html`
+今天读 Chapter 13–18。Billy 因为担心自己生病，半夜把爸爸妈妈叫醒；但第二天，他还是继续吃虫子。请留意 Billy 想象中的恐惧和爸爸妈妈真正知道的情况有什么不同。读完后，也可以想一想：什么事情会帮助你不再那么担心？
 
-【开营消息】
-Good morning, readers! 🌞 今天进入第 3 天：The Night Worry。
-今天请认真读完 Chapter 13–18 的书上正文，逐字逐句读，不要跳读，也不要只靠猜意思。读完后再打开任务卡听对应的完整朗读音频。
+🔗 今日任务卡：`https://fish-in-a-tree-camp.onrender.com/fried-worms/day3.html`
 
-今天的故事线：Billy 被自己的想象吓到；妈妈和爸爸确认吃虫子不会让他生病，他继续完成第 8 条。
-
-阅读时想一想：Billy 的肚子真的出了大问题吗？哪些细节告诉你答案？
-
-【完成清单】
-□ 读完 Chapter 13–18 的每一个字
-□ 听完今天每个章节的朗读音频，并跟读一小段
-□ 完成 3 道阅读理解题
-□ 翻完 6 张单词闪卡
-□ 完成今日英文写作，拍照提交
-
-【提醒孩子】
-先读书，再听音频；遇到不认识的词先圈出来，结合上下文和词卡处理。最重要的是把今天的内容读完整。
-
-【晚间收营】
-今天读完了吗？请在群里回复“Day 3 完成”，也可以分享一个你觉得最有趣、最奇怪或最意外的细节。不要只说“很好看”，请尽量用一句英文说明：What happened today?
-
-【助教观察点】
-Today’s chapters show how worry can grow inside someone’s imagination. Read the dream and the 3:15 A.M. scene closely. Look for the difference between what Billy fears and what the adults actually know.
+完成今天的阅读、单词闪卡、阅读理解和英文写作后拍照提交。
 
 ## Day 4 · Rules and Referees
 
-🔗 今日任务卡：`/fried-worms/day4.html`
+今天读 Chapter 19–24。赌约里的“公平”变得越来越重要：胶水粘成的虫子算不算作弊？妈妈能不能当裁判？请一边读一边判断每个人的做法是否公平。完成今天的任务卡后，欢迎大家说说：一个好的 referee 应该做什么？
 
-【开营消息】
-Good morning, readers! 🌞 今天进入第 4 天：Rules and Referees。
-今天请认真读完 Chapter 19–24 的书上正文，逐字逐句读，不要跳读，也不要只靠猜意思。读完后再打开任务卡听对应的完整朗读音频。
+🔗 今日任务卡：`https://fish-in-a-tree-camp.onrender.com/fried-worms/day4.html`
 
-今天的故事线：第 9–12 条接连完成；胶水作弊被发现，妈妈成为裁判，朋友们又想出新计划。
-
-阅读时想一想：这场赌约的规则是谁说了算？哪些做法公平，哪些做法不公平？
-
-【完成清单】
-□ 读完 Chapter 19–24 的每一个字
-□ 听完今天每个章节的朗读音频，并跟读一小段
-□ 完成 3 道阅读理解题
-□ 翻完 6 张单词闪卡
-□ 完成今日英文写作，拍照提交
-
-【提醒孩子】
-先读书，再听音频；遇到不认识的词先圈出来，结合上下文和词卡处理。最重要的是把今天的内容读完整。
-
-【晚间收营】
-今天读完了吗？请在群里回复“Day 4 完成”，也可以分享一个你觉得最有趣、最奇怪或最意外的细节。不要只说“很好看”，请尽量用一句英文说明：What happened today?
-
-【助教观察点】
-This is a great day for thinking about rules. The boys do not always agree on what “fair” means, so use evidence from the exact scene with the glued worms and the referee. Ask yourself: can a game stay fun when people change the rules?
+完成今天的阅读、单词闪卡、阅读理解和英文写作后拍照提交。
 
 ## Day 5 · The Midnight Rescue
 
-🔗 今日任务卡：`/fried-worms/day5.html`
+今天读 Chapter 25–30。Alan 和 Joe 想让 Billy 因为吃得太饱、睡着而错过一天，但 Billy 在午夜前发现了他们的计划。Tom 和 Pete 也加入了这场紧张又好笑的行动。读完后想一想：朋友在什么时候真正帮助了 Billy？
 
-【开营消息】
-Good morning, readers! 🌞 今天进入第 5 天：The Midnight Rescue。
-今天请认真读完 Chapter 25–30 的书上正文，逐字逐句读，不要跳读，也不要只靠猜意思。读完后再打开任务卡听对应的完整朗读音频。
+🔗 今日任务卡：`https://fish-in-a-tree-camp.onrender.com/fried-worms/day5.html`
 
-今天的故事线：Alan 和 Joe 想让 Billy 错过一天；Billy 在午夜前找到虫子，朋友们用警报器见证第 13 条，之后四个孩子打架又和解。
-
-阅读时想一想：Billy 如何在最后几分钟完成第 13 条？Tom 在其中做了什么？
-
-【完成清单】
-□ 读完 Chapter 25–30 的每一个字
-□ 听完今天每个章节的朗读音频，并跟读一小段
-□ 完成 3 道阅读理解题
-□ 翻完 6 张单词闪卡
-□ 完成今日英文写作，拍照提交
-
-【提醒孩子】
-先读书，再听音频；遇到不认识的词先圈出来，结合上下文和词卡处理。最重要的是把今天的内容读完整。
-
-【晚间收营】
-今天读完了吗？请在群里回复“Day 5 完成”，也可以分享一个你觉得最有趣、最奇怪或最意外的细节。不要只说“很好看”，请尽量用一句英文说明：What happened today?
-
-【助教观察点】
-Today is the big midnight adventure. Read the countdown carefully: Billy has very little time, and Tom turns the neighborhood into a witness stand. After the fight, notice how the boys solve the problem by talking instead of using another trick.
+完成今天的阅读、单词闪卡、阅读理解和英文写作后拍照提交。
 
 ## Day 6 · The Fake Worm
 
-🔗 今日任务卡：`/fried-worms/day6.html`
+今天读 Chapter 31–35。Billy 以为自己已经赢了，可是一阵像豆子一样的 burp 让他又开始怀疑；接下来，Alan 甚至做出了危险的举动。请留意故事里“赢得赌约”和“做出安全选择”之间的区别。完成今天的英文写作后拍照提交。
 
-【开营消息】
-Good morning, readers! 🌞 今天进入第 6 天：The Fake Worm。
-今天请认真读完 Chapter 31–35 的书上正文，逐字逐句读，不要跳读，也不要只靠猜意思。读完后再打开任务卡听对应的完整朗读音频。
+🔗 今日任务卡：`https://fish-in-a-tree-camp.onrender.com/fried-worms/day6.html`
 
-今天的故事线：第 14 条和第 15 条完成后，Billy 发现最后一条可能是豆子做的假虫子，Alan 又急到把他锁起来。
-
-阅读时想一想：Billy 为什么在“赢了”之后仍然不放心？最后一条虫子到底发生了什么？
-
-【完成清单】
-□ 读完 Chapter 31–35 的每一个字
-□ 听完今天每个章节的朗读音频，并跟读一小段
-□ 完成 3 道阅读理解题
-□ 翻完 6 张单词闪卡
-□ 完成今日英文写作，拍照提交
-
-【提醒孩子】
-先读书，再听音频；遇到不认识的词先圈出来，结合上下文和词卡处理。最重要的是把今天的内容读完整。
-
-【晚间收营】
-今天读完了吗？请在群里回复“Day 6 完成”，也可以分享一个你觉得最有趣、最奇怪或最意外的细节。不要只说“很好看”，请尽量用一句英文说明：What happened today?
-
-【助教观察点】
-The story is almost finished, but the rules and the danger become serious. Pay attention to the difference between winning a bet and making a safe choice. The exact words in the father’s command matter.
+完成今天的阅读、单词闪卡、阅读理解和英文写作后拍照提交。
 
 ## Day 7 · The Fifteenth Worm
 
-🔗 今日任务卡：`/fried-worms/day7.html`
+今天读最后一组 Chapter 36–41。Billy 能不能吃下真正的第十五条虫子？结尾的 epilogue 又给了我们什么意外信息？请完成最后一张任务卡和 4–6 句英文写作。恭喜大家完成整本书！🎉 读完后欢迎分享：你觉得 Billy 真的赢了吗？
 
-【开营消息】
-Good morning, readers! 🌞 今天进入第 7 天：The Fifteenth Worm。
-今天请认真读完 Chapter 36–41 的书上正文，逐字逐句读，不要跳读，也不要只靠猜意思。读完后再打开任务卡听对应的完整朗读音频。
+🔗 今日任务卡：`https://fish-in-a-tree-camp.onrender.com/fried-worms/day7.html`
 
-今天的故事线：爸爸制止了危险的行为；Pete 和 Tom 帮 Billy 在最后时刻吃下真正的第 15 条，故事以一个幽默的尾声结束。
-
-阅读时想一想：Billy 最后是怎样赢下赌约的？结尾为什么既好笑又让人意外？
-
-【完成清单】
-□ 读完 Chapter 36–41 的每一个字
-□ 听完今天每个章节的朗读音频，并跟读一小段
-□ 完成 3 道阅读理解题
-□ 翻完 6 张单词闪卡
-□ 完成今日英文写作，拍照提交
-
-【提醒孩子】
-先读书，再听音频；遇到不认识的词先圈出来，结合上下文和词卡处理。最重要的是把今天的内容读完整。
-
-【晚间收营】
-今天读完了吗？请在群里回复“Day 7 完成”，也可以分享一个你觉得最有趣、最奇怪或最意外的细节。不要只说“很好看”，请尽量用一句英文说明：What happened today?
-
-【助教观察点】
-Final day! Read all the way through the epilogue. The last scene changes the meaning of the whole adventure: Billy wins the money, but he may have gained a very strange habit. Write with evidence from the actual ending.
+完成今天的阅读、单词闪卡、阅读理解和英文写作后拍照提交。
