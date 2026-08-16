@@ -40,6 +40,20 @@ https://fish-in-a-tree-camp.onrender.com/admin.html
 
 ---
 
+# How to Eat Fried Worms 共读营（7 天）
+
+- https://fish-in-a-tree-camp.onrender.com/fried-worms/day1.html
+- https://fish-in-a-tree-camp.onrender.com/fried-worms/day2.html
+- https://fish-in-a-tree-camp.onrender.com/fried-worms/day3.html
+- https://fish-in-a-tree-camp.onrender.com/fried-worms/day4.html
+- https://fish-in-a-tree-camp.onrender.com/fried-worms/day5.html
+- https://fish-in-a-tree-camp.onrender.com/fried-worms/day6.html
+- https://fish-in-a-tree-camp.onrender.com/fried-worms/day7.html
+
+海报封面、完整朗读音频和每日任务均已绑定到线上页面。
+
+---
+
 > 固定域名，永久有效，无需每天更新。
 > 学生作业提交存在 PostgreSQL 数据库，重启不丢失。
 >
