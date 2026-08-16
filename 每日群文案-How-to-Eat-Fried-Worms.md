@@ -44,7 +44,7 @@
 
 ## Day 6 · The Fake Worm
 
-今天读 Chapter 31–35。Billy 以为自己已经赢了，可是一阵像豆子一样的 burp 让他又开始怀疑；接下来，Alan 甚至做出了危险的举动。请留意故事里“赢得赌约”和“做出安全选择”之间的区别。完成今天的英文写作后拍照提交。
+今天读 Chapter 31–35。Billy 以为自己已经赢了，可是一阵像豆子一样的 burp 让他又开始怀疑最后一条虫子是不是假的。请留意他如何根据细节重新判断发生了什么。完成今天的英文写作后拍照提交。
 
 🔗 今日任务卡：`https://fish-in-a-tree-camp.onrender.com/fried-worms/day6.html`
 
