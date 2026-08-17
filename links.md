@@ -52,6 +52,8 @@ https://fish-in-a-tree-camp.onrender.com/admin.html
 
 海报封面、完整朗读音频和每日任务均已绑定到线上页面。
 
+助教群发话术见 `每日群文案-How-to-Eat-Fried-Worms.docx`（源文案为 `每日群文案-How-to-Eat-Fried-Worms.md`）。
+
 ---
 
 > 固定域名，永久有效，无需每天更新。
